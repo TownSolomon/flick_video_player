@@ -116,18 +116,24 @@ class _AnimationPlayerState extends State<AnimationPlayer> {
                 Text('Playback speed -- '),
                 Row(
                   children: [
-                    Slider(
-                      value: playBackSpeed,
-                      onChanged: (val) {},
-                      onChangeEnd: (val) {
-                        flickManager.flickVideoManager?.videoPlayerController!
-                            .setPlaybackSpeed(val);
-                        setState(() {
-                          playBackSpeed = val;
-                        });
-                      },
-                      min: 0.25,
-                      max: 2,
+                    SliderTheme(
+                      data: SliderThemeData(
+                        activeTrackColor: Color.fromARGB(255, 0, 217, 197),
+                        thumbColor: Color.fromARGB(255, 0, 217, 197),
+                      ),
+                      child: Slider(
+                        value: playBackSpeed,
+                        onChanged: (val) {},
+                        onChangeEnd: (val) {
+                          flickManager.flickVideoManager?.videoPlayerController!
+                              .setPlaybackSpeed(val);
+                          setState(() {
+                            playBackSpeed = val;
+                          });
+                        },
+                        min: 0.25,
+                        max: 2,
+                      ),
                     ),
                     Text(playBackSpeed.toStringAsFixed(2).toString()),
                   ],
