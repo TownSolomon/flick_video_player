@@ -6,7 +6,9 @@ import 'package:provider/provider.dart';
 class FlickVideoBuffer extends StatelessWidget {
   const FlickVideoBuffer({
     Key? key,
-    this.bufferingChild = const CircularProgressIndicator(),
+    this.bufferingChild = const CircularProgressIndicator(
+      color: Color.fromARGB(255, 0, 217, 197),
+    ),
     this.child,
   }) : super(key: key);
 
